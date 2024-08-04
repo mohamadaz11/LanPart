@@ -8,10 +8,10 @@ from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identi
 
 # Initialize the app
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SECRET_KEY'] = 'IdkManAnything'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lanparty.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['JWT_SECRET_KEY'] = 'somethinghard'
+app.config['JWT_SECRET_KEY'] = 'SomethingHardAndLong'
 
 
 
