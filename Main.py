@@ -140,7 +140,6 @@ class GetGames(Resource):
 class HighScores(Resource):
     def get(self):
         try:
-            # Query to get the total score per user across all games
             scores = db.session.query(
                 User.username,
                 db.func.sum(GameScore.score).label('total_score')
@@ -150,7 +149,6 @@ class HighScores(Resource):
                 .order_by(db.func.sum(GameScore.score).desc()) \
                 .all()
 
-            # Prepare the result to be returned as JSON
             result = [{'user': username, 'total_score': total_score} for username, total_score in scores]
 
             return (result), 200
